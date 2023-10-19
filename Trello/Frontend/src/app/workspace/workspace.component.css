@@ -1,0 +1,35 @@
+.workspace__title {
+    font-size: 1.25rem;
+    color: rgb(26, 26, 128);
+    font-weight: 600;
+}
+
+.workspace-boards {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.workspace-boards__card {
+    position: relative;
+}
+
+.workspace-boards__delete-icon {
+    position: absolute;
+    bottom: 0.2rem;
+    left: 0.33rem;
+    font-size: 1rem;
+}
+
+.workspace-boards__edit-icon {
+    position: absolute;
+    bottom: 0.2rem;
+    right: 0.33rem;
+    font-size: 1rem;
+}
+
+.workspace-boards__add-icon {
+    color: rgb(26, 26, 128);
+    margin-right: 2rem;
+}

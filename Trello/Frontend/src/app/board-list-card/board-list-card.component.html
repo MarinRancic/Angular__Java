@@ -1,0 +1,15 @@
+<div class="board-list-card">
+    <fa-icon *ngIf="!isTitleEditable" class="board-list-card__delete" [icon]="faX" (click)="onDeleteListHandler()"></fa-icon>
+    <div *ngIf="!isTitleEditable" class="board-list-card__title" (click)="onToggleTitleEditHandler(true)">{{title}}</div>
+    <div *ngIf="isTitleEditable"><input (blur)="onToggleTitleEditHandler(false); onEditTitleHandler()" value={{title}} (keyup.enter)="onEditTitleHandler(); onToggleTitleEditHandler(false)" [(ngModel)] = "title" autofocus></div>
+    <app-board-list-card-card *ngFor="let boardListCard of boardListCards" [message]="boardListCard.message" [cardId]="boardListCard.id" [getBoardListCards]="getBoardListCards">
+
+    </app-board-list-card-card>
+    <div class="board-list-card__new">
+        <button *ngIf="!isAddCard" (click)="onToggleAddCardHandler(true)"><fa-icon class="board-list-card__new__icon" [icon]="faPlus"></fa-icon>Add a card</button>
+        <div class="board-list-card__new__submit" *ngIf="isAddCard">
+            <textarea (blur)="onToggleAddCardHandler(false)" [(ngModel)]="cardText" value={{cardText}} placeholder="Enter Card Text Here..."></textarea>
+            <button [disabled]="!cardText" (mousedown)="onAddCardHandler()">Add Card</button><fa-icon class="board-list-card__new__submit__cancel" [icon]="faX" (click)="onToggleAddCardHandler(false)"></fa-icon>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+.home-page{
+    max-width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+    gap: 3rem;
+}

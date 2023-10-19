@@ -1,0 +1,5 @@
+<div class="board-list-card-card" (click)="onToggleMessageHandler(true)">
+    <textarea *ngIf="isToggleMessage" (blur)="onToggleMessageHandler(false); onEditCardHandler()" [value]="message" [(ngModel)] = "message" autofocus>{{message}} </textarea>
+    <fa-icon [icon]="faTrash" *ngIf="!isToggleMessage" (mousedown)="onDeleteCardHandler()"></fa-icon>
+    <span *ngIf="!isToggleMessage">{{message}}</span>
+</div>

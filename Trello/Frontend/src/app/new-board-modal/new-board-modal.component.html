@@ -1,0 +1,11 @@
+<div class="new-board-modal" (click)="closeModal($event, false)">
+    <div class="new-board-modal__content" (click)="closeModal($event)">
+        <fa-icon [icon]="faX" (click)="closeModal($event, false)"/>
+        <input [(ngModel)]="board_title" (keyup.enter)="onSubmit()" type="text" placeholder="Add board title" required/>
+        <div class="new-board-modal__content__error">{{error}}</div>
+        <div class="new-board-modal__content__buttons">
+            <button class="new-board-modal__content__buttons__create" (click)="onSubmit()">Create</button>
+            <button class="new-board-modal__content__buttons__cancel" (click)="closeModal($event, false)">Cancel</button>
+        </div>
+    </div>
+</div>

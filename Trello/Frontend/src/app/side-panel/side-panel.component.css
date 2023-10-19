@@ -1,0 +1,16 @@
+fa-icon {
+    color: rgb(26, 26, 128);
+    margin-right: 2rem;
+}
+
+li, ul {
+    margin: 0;
+    list-style-type: none;
+    font-weight: 600;
+    color: rgb(26, 26, 128);
+}
+
+.side-panel__board:hover,
+fa-icon:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,20 @@
+<div class="board-list">
+    <div class="board-list__title">
+        <h2 *ngIf="!isEditable">{{title}}</h2>
+        <h2 *ngIf="isEditable">
+            <input [(ngModel)]="title" (blur)="onToggleBoardEditHandler(false)" (keyup.enter)="onBoardEditHandler()"/>
+        </h2>
+        <div class="board-list__title__buttons">
+            <fa-icon [icon]="faTrash" title="Delete Board" (click)="onDeleteBoardHandler()"></fa-icon>
+            <fa-icon *ngIf="!isEditable" [icon]="faEdit" title="Edit Board" (mousedown)="onToggleBoardEditHandler(true)"></fa-icon>
+            <fa-icon *ngIf="isEditable" [icon]="faCheck" title="Rename" (mousedown)="onBoardEditHandler()"></fa-icon>
+        </div>
+    </div>
+    <div class="board-list__lists">
+        <app-board-list-card *ngFor="let boardList of boardLists" [getBoardLists] = "getBoardLists" [title] = "boardList.title" [listId] = "boardList.id" [boardId] = "boardId"></app-board-list-card>
+        <div class="board-list__lists__new">
+            <input type="text" [(ngModel)]="newListTitle" placeholder="Enter List Title..." (keyup.enter)="onAddNewListHandler()"/>
+            <button [disabled] = "!newListTitle" (click)="onAddNewListHandler()">Add List</button>
+        </div>
+    </div>
+</div>

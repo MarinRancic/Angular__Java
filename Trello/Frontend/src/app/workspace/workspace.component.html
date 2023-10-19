@@ -1,0 +1,8 @@
+<div class="workspace">
+    <fa-icon [icon] = "faUser"/> <span class="workspace__title">Your Workspace Boards</span>
+    <div class="workspace-boards">
+        <app-workspace-board-card class="workspace-boards__card" *ngFor="let board of boards" (click)="onPageChangeHandler('board', board.id)" [title] = "board.title"></app-workspace-board-card>
+        <app-workspace-board-card [className] ="'workspace-board-card__new-board'" (click)="toggleModal(true)">Create new board <fa-icon class="workspace-boards__add-icon" [icon] = "faCirclePlus"/></app-workspace-board-card>
+    </div>
+</div>
+<app-new-board-modal *ngIf="isOpen" [toggleModal] = "toggleModal"></app-new-board-modal>

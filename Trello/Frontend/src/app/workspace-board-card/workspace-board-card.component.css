@@ -1,0 +1,27 @@
+.workspace-board-card {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    border: none;
+    box-shadow: 2px 2px 10px black;
+    height: 6rem;
+    padding: 0.5rem;
+    background-color: antiquewhite;
+    font-size: 1.1rem;
+}
+
+.workspace-board-card span {
+    word-break: break-word;
+}
+
+.workspace-board-card:hover {
+    cursor: pointer;
+}
+
+.workspace-board-card__new-board {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+    font-size: 1rem;
+}
